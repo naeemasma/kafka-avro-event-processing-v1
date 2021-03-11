@@ -1,0 +1,25 @@
+{"namespace": "com.example.domain",
+ "type": "record",
+ "name": "EventMessageType",
+ "fields": [
+     {"name": "id", "type": "long"},
+     {"name": "description",  "type": ["string", "null"]},
+     {"name": "event_history",
+      "type":{
+      "type": "array",
+      "items":{
+       "name": "event_history_record",
+       "type": "record",
+       "fields":[
+         {"name": "event_processor", "type":"string"},
+         {"name": "time_received", "type":"string"},
+         {"name": "time_published", "type":"string"},
+         {"name": "topic_published", "type":"string"},
+         {"name": "error_code", "type":"int"},
+         {"name": "error_message", "type":"string"}
+        ]
+       }
+      }      
+     }
+ ]
+ }
